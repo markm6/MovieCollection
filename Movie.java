@@ -1,11 +1,13 @@
+import java.util.ArrayList;
+
 public class Movie {
     private String title;
-    private String[] cast;
+    private ArrayList<String> cast;
     private String director;
     private String overview;
     private int runtime;
     private double userRating;
-    public Movie(String title, String[] cast, String director, String overview, int runtime, double userRating) {
+    public Movie(String title, ArrayList<String> cast, String director, String overview, int runtime, double userRating) {
         this.title = title;
         this.cast = cast;
         this.director = director;
@@ -13,7 +15,7 @@ public class Movie {
         this.overview = overview;
         this.userRating = userRating;
     }
-    public String[] getCast() {
+    public ArrayList<String> getCast() {
         return cast;
     }
     public String getDirector() {
@@ -30,5 +32,9 @@ public class Movie {
     }
     public double getUserRating() {
         return userRating;
+    }
+    public String stringCast() {
+        String c = "" + cast;
+        return c.substring(1, c.length() - 1);
     }
 }
